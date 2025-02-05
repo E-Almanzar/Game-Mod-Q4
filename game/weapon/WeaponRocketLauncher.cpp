@@ -62,6 +62,8 @@ private:
 	stateResult_t		Frame_AddToClip			( const stateParms_t& parms );
 	
 	CLASS_STATES_PROTOTYPE ( rvWeaponRocketLauncher );
+	
+	bool Rswitch; //Added by E.A.
 };
 
 CLASS_DECLARATION( rvWeapon, rvWeaponRocketLauncher )
@@ -130,6 +132,8 @@ void rvWeaponRocketLauncher::Spawn ( void ) {
 
 	SetState ( "Raise", 0 );	
 	SetRocketState ( "Rocket_Idle", 0 );
+	//SetState ( "Fire", 2 );	
+	//SetRocketState ( "Rocket_Fire", 2 );
 }
 
 /*
@@ -445,8 +449,17 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 	};	
 	switch ( parms.stage ) {
 		case STAGE_INIT:
-			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));		
-			Attack ( false, 1, spread, 0, 1.0f );
+			
+			//Elizabeth Almanzar Changes 
+			//Logic to make the attack flip between big spread and focus fire each hit
+			if (Rswitch) {
+				Attack(false, 2, 30, 0, 20.0f); //what happens if spread is negative
+			}
+			else {
+				Attack(false, 30, 5, 0, 1.0f);
+			}
+			Rswitch = !Rswitch;
+
 			PlayAnim ( ANIMCHANNEL_LEGS, "fire", parms.blendFrames );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
@@ -461,6 +474,11 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 			}
 			return SRESULT_WAIT;
 	}
+	
+	/*for (int i = 0; i < 25; i++) {
+		Attack(false, 10, 10, 0, 1.0f);
+	}*/
+
 	return SRESULT_ERROR;
 }
 
