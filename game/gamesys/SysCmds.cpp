@@ -3015,6 +3015,17 @@ void Cmd_TestClientModel_f( const idCmdArgs& args ) {
 
 
 // RAVEN END
+void Cmd_spawnThatGuy_f( const idCmdArgs& args ) {
+	
+	gameLocal.Printf("AGAGGAGAGAHHAGHA IM WORKING");
+	idDict		dict;
+	dict.Set("classname", "monster_grunt");
+	dict.Set("angle", "0");
+
+	idEntity* newEnt = NULL;
+	gameLocal.SpawnEntityDef(dict, &newEnt);
+
+}
 
 void Cmd_CheckSave_f( const idCmdArgs &args );
 
@@ -3232,6 +3243,10 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "buyMenu",				Cmd_ToggleBuyMenu_f,		CMD_FL_GAME,				"Toggle buy menu (if in a buy zone and the game type supports it)" );
 	cmdSystem->AddCommand( "buy",					Cmd_BuyItem_f,				CMD_FL_GAME,				"Buy an item (if in a buy zone and the game type supports it)" );
 // RITUAL END
+
+//E.ALM START
+	cmdSystem->AddCommand("spawnThatGuy", Cmd_spawnThatGuy_f, CMD_FL_GAME, "Spawn a Guy");
+
 
 }
 
