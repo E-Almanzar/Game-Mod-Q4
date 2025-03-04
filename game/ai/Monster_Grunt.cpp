@@ -54,19 +54,16 @@ rvMonsterGrunt::rvMonsterGrunt
 ================
 */
 rvMonsterGrunt::rvMonsterGrunt ( void ) {
-	//E.ALM Setting Leader
-	
-	//combat.fl.ignoreEnemies = true;
-	//gameLocal.Printf("Setting ME? to the  %p", gameLocal.GetLocalPlayer());
-	//No clue what practical effects this has
-	//idAI::SetLeader(gameLocal.GetLocalPlayer());
-	
-	//Adding and Removing Teammates really isnt the grunt's job, but i want it to overwrite its parent
-	//rvAIManager::RemoveTeammate();
-	//rvAIManager::AddTeammate();
-	aiManager.RemoveTeammate(this);
-	aiManager.AddTeammate(this);
-	gameLocal.Printf("Did They Work?");
+	//E.ALM 
+	//99% sure that this is working, but for some reason the stroggers dont wanna attack one another
+	//It is actually working, but gets undone somewhere else... hmmm
+	/*this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate( this );
+	aiManager.AddTeammate( this );
+	if (team == AITEAM_MARINE) {
+		gameLocal.Printf("Team is marine 1");
+	}
+	*/
 
 	standingMeleeNoAttackTime = 0;
 }
@@ -156,16 +153,24 @@ rvMonsterGrunt::CheckActions
 ================
 */
 bool rvMonsterGrunt::CheckActions ( void ) {
+	
+	//E.ALM IT WORKS???? HOLY MOLY
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
+
+
+
 	// If our health is below the rage threshold then enrage
 	if ( health < rageThreshold ) { 
 		PerformAction ( "Torso_Enrage", 4, true );
 		return true;
 	}
 
-	// Moving melee attack?
-	//if ( PerformAction ( &actionMeleeMoveAttack, (checkAction_t)&idAI::CheckAction_MeleeAttack, NULL ) ) {
-	//	return true;
-	//}
+	//Moving melee attack?
+	if ( PerformAction ( &actionMeleeMoveAttack, (checkAction_t)&idAI::CheckAction_MeleeAttack, NULL ) ) {
+		return true;
+	}
 	
 	// Default actions
 	if ( CheckPainActions ( ) ) {

@@ -4,6 +4,7 @@
 
 #include "../Game_local.h"
 #include "../client/ClientModel.h"
+#include "AI_Manager.h"
 
 class rvMonsterGladiator : public idAI {
 public:
@@ -143,6 +144,10 @@ stays hidden behind his shield if getting shot at.
 ================
 */
 bool rvMonsterGladiator::CheckActions ( void ) {
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
+
 	// If not moving, try turning in place
 	if ( !move.fl.moving && gameLocal.time > nextTurnTime ) {
 		float turnYaw = idMath::AngleNormalize180 ( move.ideal_yaw - move.current_yaw ) ;

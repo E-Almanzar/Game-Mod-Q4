@@ -305,7 +305,11 @@ void rvAIManager::AddTeammate ( idActor* actor ) {
 	if ( actor->teamNode.InList ( ) ) {
 		return;
 	}
+
+	//Everyones gonna be a marine today
 	actor->teamNode.AddToEnd ( teams[actor->team] );
+	//actor->teamNode.AddToEnd(teams[AITEAM_MARINE]);
+
 }
 
 /*
@@ -316,6 +320,7 @@ rvAIManager::RemoveTeammate
 void rvAIManager::RemoveTeammate ( idActor* actor ) {
 	actor->teamNode.Remove ( );
 }
+
 
 /*
 =====================

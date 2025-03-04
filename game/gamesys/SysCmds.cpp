@@ -3015,9 +3015,8 @@ void Cmd_TestClientModel_f( const idCmdArgs& args ) {
 
 
 // RAVEN END
-//Line 1110 is their spawn
-void Cmd_spawnThatGuy_f(const idCmdArgs& args) {
-	//Why does it spawn a grunt?
+//EALM Line 1110 is their spawn 
+void Cmd_spawnThatGrunt_f(const idCmdArgs& args) {
 	const char* key, * value;
 	int			i;
 	float		yaw;
@@ -3027,8 +3026,7 @@ void Cmd_spawnThatGuy_f(const idCmdArgs& args) {
 	player = gameLocal.GetLocalPlayer();
 	yaw = player->viewAngles.yaw;
 	value = args.Argv(1);
-	//Sets it to a grunt. Maybe we can have like, if it gets spawned here it can be friendly?
-	//How do we even get something to spawn it another way
+
 	dict.Set("classname", "monster_grunt");
 	dict.Set("angle", va("%f", yaw + 180));
 
@@ -3043,15 +3041,43 @@ void Cmd_spawnThatGuy_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-
 	gameLocal.SpawnEntityDef(dict, &newEnt);
-
 	if (newEnt) {
 		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
 	}
-
-	gameLocal.Printf("AGAGGAGAGAHHAGHA IM WORKING");
 }
+void Cmd_spawnThatGladiator_f(const idCmdArgs& args) {
+	const char* key, * value;
+	int			i;
+	float		yaw;
+	idVec3		org;
+	idPlayer* player;
+	idDict		dict;
+	player = gameLocal.GetLocalPlayer();
+	yaw = player->viewAngles.yaw;
+	value = args.Argv(1);
+
+	dict.Set("classname", "monster_gladiator");
+	dict.Set("angle", va("%f", yaw + 180));
+
+	org = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+	dict.Set("origin", org.ToString());
+	idEntity* newEnt = NULL;
+
+	for (int i = 2; i < args.Argc() - 1; i += 2) {
+
+		key = args.Argv(i);
+		value = args.Argv(i + 1);
+
+		dict.Set(key, value);
+	}
+	gameLocal.SpawnEntityDef(dict, &newEnt);
+	if (newEnt) {
+		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	}
+}
+
+
 
 void Cmd_CheckSave_f( const idCmdArgs &args );
 
@@ -3270,9 +3296,9 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "buy",					Cmd_BuyItem_f,				CMD_FL_GAME,				"Buy an item (if in a buy zone and the game type supports it)" );
 // RITUAL END
 
-//E.ALM START
-	cmdSystem->AddCommand("spawnThatGuy", Cmd_spawnThatGuy_f, CMD_FL_GAME, "Spawn a Guy");
-
+//EALM START
+	cmdSystem->AddCommand("spawnThatGrunt", Cmd_spawnThatGrunt_f, CMD_FL_GAME, "Spawns a Grunt");
+	cmdSystem->AddCommand("spawnThatGladiator", Cmd_spawnThatGladiator_f, CMD_FL_GAME, "Spawns a Gladiator");
 
 }
 
