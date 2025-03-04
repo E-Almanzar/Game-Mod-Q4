@@ -3015,16 +3015,42 @@ void Cmd_TestClientModel_f( const idCmdArgs& args ) {
 
 
 // RAVEN END
-void Cmd_spawnThatGuy_f( const idCmdArgs& args ) {
-	
-	gameLocal.Printf("AGAGGAGAGAHHAGHA IM WORKING");
+//Line 1110 is their spawn
+void Cmd_spawnThatGuy_f(const idCmdArgs& args) {
+	//Why does it spawn a grunt?
+	const char* key, * value;
+	int			i;
+	float		yaw;
+	idVec3		org;
+	idPlayer* player;
 	idDict		dict;
+	player = gameLocal.GetLocalPlayer();
+	yaw = player->viewAngles.yaw;
+	value = args.Argv(1);
+	//Sets it to a grunt. Maybe we can have like, if it gets spawned here it can be friendly?
+	//How do we even get something to spawn it another way
 	dict.Set("classname", "monster_grunt");
-	dict.Set("angle", "0");
+	dict.Set("angle", va("%f", yaw + 180));
 
+	org = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+	dict.Set("origin", org.ToString());
 	idEntity* newEnt = NULL;
+
+	for (int i = 2; i < args.Argc() - 1; i += 2) {
+
+		key = args.Argv(i);
+		value = args.Argv(i + 1);
+
+		dict.Set(key, value);
+	}
+
 	gameLocal.SpawnEntityDef(dict, &newEnt);
 
+	if (newEnt) {
+		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	}
+
+	gameLocal.Printf("AGAGGAGAGAHHAGHA IM WORKING");
 }
 
 void Cmd_CheckSave_f( const idCmdArgs &args );
@@ -3078,7 +3104,7 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "gameKick",				Cmd_Kick_f,					CMD_FL_GAME,				"same as kick, but recognizes player names" );
 	cmdSystem->AddCommand( "give",					Cmd_Give_f,					CMD_FL_GAME|CMD_FL_CHEAT,	"gives one or more items" );
 	cmdSystem->AddCommand( "centerview",			Cmd_CenterView_f,			CMD_FL_GAME,				"centers the view" );
-	cmdSystem->AddCommand( "god",					Cmd_God_f,					CMD_FL_GAME|CMD_FL_CHEAT,	"enables god mode" );
+	cmdSystem->AddCommand( "god",					Cmd_God_f,					CMD_FL_GAME|CMD_FL_CHEAT,	"togglemenus god mode" );
 	cmdSystem->AddCommand( "undying",				Cmd_Undying_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"enables undying mode (take damage down to 1 health, but do not die)" );
 	cmdSystem->AddCommand( "notarget",				Cmd_Notarget_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"disables the player as a target" );
 	cmdSystem->AddCommand( "noclip",				Cmd_Noclip_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"disables collision detection for the player" );

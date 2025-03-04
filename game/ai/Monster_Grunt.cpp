@@ -3,6 +3,8 @@
 #pragma hdrstop
 
 #include "../Game_local.h"
+#include "AI_Manager.h"
+
 
 class rvMonsterGrunt : public idAI {
 public:
@@ -52,6 +54,20 @@ rvMonsterGrunt::rvMonsterGrunt
 ================
 */
 rvMonsterGrunt::rvMonsterGrunt ( void ) {
+	//E.ALM Setting Leader
+	
+	//combat.fl.ignoreEnemies = true;
+	//gameLocal.Printf("Setting ME? to the  %p", gameLocal.GetLocalPlayer());
+	//No clue what practical effects this has
+	//idAI::SetLeader(gameLocal.GetLocalPlayer());
+	
+	//Adding and Removing Teammates really isnt the grunt's job, but i want it to overwrite its parent
+	//rvAIManager::RemoveTeammate();
+	//rvAIManager::AddTeammate();
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
+	gameLocal.Printf("Did They Work?");
+
 	standingMeleeNoAttackTime = 0;
 }
 
@@ -147,9 +163,9 @@ bool rvMonsterGrunt::CheckActions ( void ) {
 	}
 
 	// Moving melee attack?
-	if ( PerformAction ( &actionMeleeMoveAttack, (checkAction_t)&idAI::CheckAction_MeleeAttack, NULL ) ) {
-		return true;
-	}
+	//if ( PerformAction ( &actionMeleeMoveAttack, (checkAction_t)&idAI::CheckAction_MeleeAttack, NULL ) ) {
+	//	return true;
+	//}
 	
 	// Default actions
 	if ( CheckPainActions ( ) ) {
@@ -182,9 +198,11 @@ bool rvMonsterGrunt::CheckActions ( void ) {
 				}
 			}
 		}
-		if ( PerformAction ( &actionRangedAttack,(checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerRangedAttack ) ) {
-			return true;
-		}
+		
+		//Gonna Try turning off its actions
+		//if ( PerformAction ( &actionRangedAttack,(checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerRangedAttack ) ) {
+		//	return true;
+		//}
 	}
 	return false;
 }
