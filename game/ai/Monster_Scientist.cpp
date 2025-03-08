@@ -3,6 +3,7 @@
 #pragma hdrstop
 
 #include "../Game_local.h"
+#include "AI_Manager.h"
 
 class rvMonsterScientist : public idAI {
 public:
@@ -32,6 +33,9 @@ rvMonsterScientist::rvMonsterScientist
 ================
 */
 rvMonsterScientist::rvMonsterScientist ( void ) {
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 }
 
 /*
@@ -40,6 +44,9 @@ rvMonsterScientist::Spawn
 ================
 */
 void rvMonsterScientist::Spawn ( void ) {
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 	PlayEffect ( "fx_fly", animator.GetJointHandle ( "effects_bone" ), true );
 } 
 

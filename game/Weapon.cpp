@@ -2551,9 +2551,21 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		GetGlobalJointTransform( true, barrelJointView, muzzleOrigin, muzzleAxis );
 	} else {
 		// go straight out of the view
-		muzzleOrigin = playerViewOrigin;
-		muzzleAxis = playerViewAxis;		
-		muzzleOrigin += playerViewAxis[0] * muzzleOffset;
+		//EALM
+		if (spawnArgs.GetBool("IsAGrenadeLauncher")) {
+			gameLocal.Printf("Were a grenade launcher bruv");
+			muzzleOrigin = playerViewOrigin;
+			muzzleOrigin.z = muzzleOrigin.z + 500.0f;
+			muzzleAxis = playerViewAxis;
+			
+			muzzleOrigin += playerViewAxis[0] * muzzleOffset;
+		}
+		else{
+			muzzleOrigin = playerViewOrigin;
+			muzzleAxis = playerViewAxis;
+			muzzleOrigin += playerViewAxis[0] * muzzleOffset;
+		}
+
 	}
 
 	// add some to the kick time, incrementally moving repeat firing weapons back

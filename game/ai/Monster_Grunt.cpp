@@ -64,6 +64,9 @@ rvMonsterGrunt::rvMonsterGrunt ( void ) {
 		gameLocal.Printf("Team is marine 1");
 	}
 	*/
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 
 	standingMeleeNoAttackTime = 0;
 }
@@ -85,6 +88,9 @@ void rvMonsterGrunt::Spawn ( void ) {
 	if ( spawnArgs.GetBool ( "preinject" ) ) {
 		RageStart ( );
 	}	
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 }
 
 /*
@@ -154,7 +160,7 @@ rvMonsterGrunt::CheckActions
 */
 bool rvMonsterGrunt::CheckActions ( void ) {
 	
-	//E.ALM IT WORKS???? HOLY MOLY
+	//EALM IT WORKS???? HOLY MOLY
 	this->team = AITEAM_MARINE;
 	aiManager.RemoveTeammate(this);
 	aiManager.AddTeammate(this);
@@ -167,15 +173,24 @@ bool rvMonsterGrunt::CheckActions ( void ) {
 		return true;
 	}
 
+	//gameLocal.Printf("I wanna moving attack\n");
 	//Moving melee attack?
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 	if ( PerformAction ( &actionMeleeMoveAttack, (checkAction_t)&idAI::CheckAction_MeleeAttack, NULL ) ) {
+		//gameLocal.Printf("Im moving attacking!\n");
 		return true;
 	}
+	
 	
 	// Default actions
 	if ( CheckPainActions ( ) ) {
 		return true;
 	}
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 
 	if ( PerformAction ( &actionEvadeLeft,   (checkAction_t)&idAI::CheckAction_EvadeLeft, &actionTimerEvade )			 ||
 			PerformAction ( &actionEvadeRight,  (checkAction_t)&idAI::CheckAction_EvadeRight, &actionTimerEvade )			 ||
@@ -205,9 +220,9 @@ bool rvMonsterGrunt::CheckActions ( void ) {
 		}
 		
 		//Gonna Try turning off its actions
-		//if ( PerformAction ( &actionRangedAttack,(checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerRangedAttack ) ) {
-		//	return true;
-		//}
+		if ( PerformAction ( &actionRangedAttack,(checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerRangedAttack ) ) {
+			return true;
+		}
 	}
 	return false;
 }

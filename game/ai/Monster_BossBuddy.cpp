@@ -3,6 +3,7 @@
 #pragma hdrstop
 
 #include "../Game_local.h"
+#include "AI_Manager.h"
 
 //------------------------------------------------------------
 class rvMonsterBossBuddy : public idAI 
@@ -79,6 +80,9 @@ private:
 //------------------------------------------------------------
 rvMonsterBossBuddy::rvMonsterBossBuddy( void ) 
 {
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 	mMaxShields = BOSS_BUDDY_MAX_SHIELDS;
 	mShields = mMaxShields;
 	mLastDamageTime = 0;
@@ -121,6 +125,9 @@ void rvMonsterBossBuddy::Spawn( void )
 	}
 
 	HideSurface( "models/monsters/bossbuddy/forcefield" );
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 }
 
 //------------------------------------------------------------
@@ -514,6 +521,10 @@ END_CLASS_STATES
 //------------------------------------------------------------
 stateResult_t rvMonsterBossBuddy::State_Torso_RocketAttack( const stateParms_t& parms ) 
 {
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
+
 	enum 
 	{ 
 		STAGE_INIT,
@@ -570,6 +581,10 @@ stateResult_t rvMonsterBossBuddy::State_Torso_RocketAttack( const stateParms_t& 
 //------------------------------------------------------------
 stateResult_t rvMonsterBossBuddy::State_Torso_SlashAttack( const stateParms_t& parms ) 
 {
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
+
 	enum 
 	{ 
 		STAGE_INIT,

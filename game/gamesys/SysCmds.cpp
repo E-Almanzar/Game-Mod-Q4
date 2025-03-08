@@ -3076,7 +3076,179 @@ void Cmd_spawnThatGladiator_f(const idCmdArgs& args) {
 		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
 	}
 }
+void Cmd_spawnThatTurret_f(const idCmdArgs& args) {
+	const char* key, * value;
+	int			i;
+	float		yaw;
+	idVec3		org;
+	idPlayer* player;
+	idDict		dict;
+	player = gameLocal.GetLocalPlayer();
+	yaw = player->viewAngles.yaw;
+	value = args.Argv(1);
 
+	dict.Set("classname", "monster_turret");
+	dict.Set("angle", va("%f", yaw + 180));
+
+	org = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+	dict.Set("origin", org.ToString());
+	idEntity* newEnt = NULL;
+
+	for (int i = 2; i < args.Argc() - 1; i += 2) {
+
+		key = args.Argv(i);
+		value = args.Argv(i + 1);
+
+		dict.Set(key, value);
+	}
+	gameLocal.SpawnEntityDef(dict, &newEnt);
+	if (newEnt) {
+		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	}
+}
+
+void Cmd_spawnThatSci_f(const idCmdArgs& args) {
+	const char* key, * value;
+	int			i;
+	float		yaw;
+	idVec3		org;
+	idPlayer* player;
+	idDict		dict;
+	player = gameLocal.GetLocalPlayer();
+	yaw = player->viewAngles.yaw;
+	value = args.Argv(1);
+
+	dict.Set("classname", "monster_scientist");
+	dict.Set("angle", va("%f", yaw + 180));
+
+	org = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+	dict.Set("origin", org.ToString());
+	idEntity* newEnt = NULL;
+
+	for (int i = 2; i < args.Argc() - 1; i += 2) {
+
+		key = args.Argv(i);
+		value = args.Argv(i + 1);
+
+		dict.Set(key, value);
+	}
+	gameLocal.SpawnEntityDef(dict, &newEnt);
+	if (newEnt) {
+		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	}
+}
+
+void Cmd_spawnThatBBuddy_f(const idCmdArgs& args) {
+	const char* key, * value;
+	int			i;
+	float		yaw;
+	idVec3		org;
+	idPlayer* player;
+	idDict		dict;
+	player = gameLocal.GetLocalPlayer();
+	yaw = player->viewAngles.yaw;
+	value = args.Argv(1);
+
+	dict.Set("classname", "monster_bossbuddy");
+	dict.Set("angle", va("%f", yaw + 180));
+
+	org = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+	dict.Set("origin", org.ToString());
+	idEntity* newEnt = NULL;
+
+	for (int i = 2; i < args.Argc() - 1; i += 2) {
+
+		key = args.Argv(i);
+		value = args.Argv(i + 1);
+
+		dict.Set(key, value);
+	}
+	gameLocal.SpawnEntityDef(dict, &newEnt);
+	if (newEnt) {
+		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	}
+}
+
+//EALM
+void Cmd_JumpSpell_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	//idPhysics_Player physicsObj;
+	//physicsObj.SetSelf(player);
+	if (pm_jumpheight.GetFloat() == 48) {
+		pm_jumpheight.SetFloat(200);
+	}
+	else {
+		pm_jumpheight.SetFloat(48);
+	}
+
+}
+
+void Cmd_Longstrider_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	//idPhysics_Player physicsObj;
+	//physicsObj.SetSelf(player);
+	if (pm_speed.GetFloat() == 160) {
+		pm_speed.SetFloat(750);
+	}
+	else {
+		pm_speed.SetFloat(160);
+	}
+
+}
+
+void Cmd_Invis_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+
+	player->GivePowerUp(POWERUP_INVISIBILITY, SEC2MS(10.0f));
+}
+
+/*void Cmd_MistyStep_f(const idCmdArgs& args) {
+	idVec3		origin;
+	idAngles	angles;
+	idPlayer* player;
+	idEntity* ent;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+
+	if (args.Argc() != 2) {
+		gameLocal.Printf("usage: teleport <name of entity to teleport to>\n");
+		return;
+	}
+
+	//idEntity* newEnt = NULL;
+	//gameLocal.SpawnEntityDef(dict, &newEnt);
+	ent = gameLocal.FindEntity(args.Argv(1));
+	//ent = gameLocal.FindEntity("monster_grunt");
+	if (!ent) {
+		gameLocal.Printf("entity not found\n");
+		return;
+	}
+
+	gameLocal.Printf("%s",args.Argv(1));
+	angles.Zero();
+	angles.yaw = ent->GetPhysics()->GetAxis()[0].ToYaw();
+	origin = ent->GetPhysics()->GetOrigin();
+
+	player->Teleport(origin, angles, ent);
+}*/
 
 
 void Cmd_CheckSave_f( const idCmdArgs &args );
@@ -3297,8 +3469,18 @@ void idGameLocal::InitConsoleCommands( void ) {
 // RITUAL END
 
 //EALM START
+//Summons
 	cmdSystem->AddCommand("spawnThatGrunt", Cmd_spawnThatGrunt_f, CMD_FL_GAME, "Spawns a Grunt");
 	cmdSystem->AddCommand("spawnThatGladiator", Cmd_spawnThatGladiator_f, CMD_FL_GAME, "Spawns a Gladiator");
+	cmdSystem->AddCommand("spawnThatTurret", Cmd_spawnThatTurret_f, CMD_FL_GAME, "Spawns a Turret");
+	cmdSystem->AddCommand("spawnThatSci", Cmd_spawnThatSci_f, CMD_FL_GAME, "Spawns a sci");
+	cmdSystem->AddCommand("spawnThatBBuddy", Cmd_spawnThatBBuddy_f, CMD_FL_GAME, "Spawns a BBuddy");
+//Utility
+	cmdSystem->AddCommand("JumpSpell", Cmd_JumpSpell_f, CMD_FL_GAME, "Sets the jump height to 200?");
+	//cmdSystem->AddCommand("MistyStep", Cmd_MistyStep_f, CMD_FL_GAME, "Warps to something idk ");
+	cmdSystem->AddCommand("Longstrider", Cmd_Longstrider_f, CMD_FL_GAME, "5x speed, toggle");
+	cmdSystem->AddCommand("Invis", Cmd_Invis_f, CMD_FL_GAME, "");
+
 
 }
 

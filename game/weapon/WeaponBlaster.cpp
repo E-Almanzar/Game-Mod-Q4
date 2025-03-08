@@ -60,7 +60,7 @@ rvWeaponBlaster::rvWeaponBlaster ( void ) {
 rvWeaponBlaster::UpdateFlashlight
 ================
 */
-bool rvWeaponBlaster::UpdateFlashlight ( void ) {
+bool rvWeaponBlaster::UpdateFlashlight(void) {
 	if ( !wsfl.flashlight ) {
 		return false;
 	}
@@ -74,7 +74,8 @@ bool rvWeaponBlaster::UpdateFlashlight ( void ) {
 rvWeaponBlaster::Flashlight
 ================
 */
-void rvWeaponBlaster::Flashlight ( bool on ) {
+//Come back to later for a light spell
+void rvWeaponBlaster::Flashlight(bool on) {
 	owner->Flashlight ( on );
 	
 	if ( on ) {
@@ -103,18 +104,18 @@ bool rvWeaponBlaster::UpdateAttack ( void ) {
 
 	// If the player is pressing the fire button and they have enough ammo for a shot
 	// then start the shooting process.
-	if ( wsfl.attack && gameLocal.time >= nextAttackTime ) {
+	if (wsfl.attack && gameLocal.time >= nextAttackTime) {
 		// Save the time which the fire button was pressed
 		if ( fireHeldTime == 0 ) {		
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			fireHeldTime   = gameLocal.time;
 			viewModel->SetShaderParm ( BLASTER_SPARM_CHARGEGLOW, chargeGlow[0] );
 		}
-	}		
+	}	
 
 	// If they have the charge mod and they have overcome the initial charge 
 	// delay then transition to the charge state.
-	if ( fireHeldTime != 0 ) {
+	if (fireHeldTime != 0) {
 		if ( gameLocal.time - fireHeldTime > chargeDelay ) {
 			SetState ( "Charge", 4 );
 			return true;
@@ -155,8 +156,9 @@ void rvWeaponBlaster::Spawn ( void ) {
 
 	fireHeldTime		= 0;
 	fireForced			= false;
-			
-	Flashlight ( owner->IsFlashlightOn() );
+		
+	
+	//Flashlight ( owner->IsFlashlightOn() );
 }
 
 /*
@@ -426,12 +428,12 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 
 
 	
-			if ( gameLocal.time - fireHeldTime > chargeTime ) {	
+			if (gameLocal.time - fireHeldTime > chargeTime) {
 				Attack ( true, 1, spread, 0, 1.0f );
 				PlayEffect ( "fx_chargedflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames );
 			} else {
-				Attack ( false, 1, 1, 0, 1.0f );
+				Attack ( false, 1, 0, 0, 2.0f );
 				PlayEffect ( "fx_normalflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "fire", parms.blendFrames );
 			}
@@ -440,11 +442,14 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 			return SRESULT_STAGE(FIRE_WAIT);
 		
 		case FIRE_WAIT:
+
 			if ( AnimDone ( ANIMCHANNEL_ALL, 4 ) ) {
 				SetState ( "Idle", 4 );
 				return SRESULT_DONE;
 			}
-			if ( UpdateFlashlight ( ) || UpdateAttack ( ) ) {
+			if ( UpdateAttack ( ) ) {
+			//	if (UpdateFlashlight() || UpdateAttack()) {
+
 				return SRESULT_DONE;
 			}
 			return SRESULT_WAIT;
@@ -457,31 +462,32 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 rvWeaponBlaster::State_Flashlight
 ================
 */
-stateResult_t rvWeaponBlaster::State_Flashlight ( const stateParms_t& parms ) {
-	enum {
-		FLASHLIGHT_INIT,
-		FLASHLIGHT_WAIT,
-	};	
-	switch ( parms.stage ) {
-		case FLASHLIGHT_INIT:			
-			SetStatus ( WP_FLASHLIGHT );
+	stateResult_t rvWeaponBlaster::State_Flashlight(const stateParms_t& parms) {
+		enum {
+			FLASHLIGHT_INIT,
+			FLASHLIGHT_WAIT,
+		};
+		switch (parms.stage) {
+		case FLASHLIGHT_INIT:
+			SetStatus(WP_FLASHLIGHT);
 			// Wait for the flashlight anim to play		
-			PlayAnim( ANIMCHANNEL_ALL, "flashlight", 0 );
-			return SRESULT_STAGE ( FLASHLIGHT_WAIT );
-			
+			PlayAnim(ANIMCHANNEL_ALL, "flashlight", 0);
+			return SRESULT_STAGE(FLASHLIGHT_WAIT);
+
 		case FLASHLIGHT_WAIT:
-			if ( !AnimDone ( ANIMCHANNEL_ALL, 4 ) ) {
+			if (!AnimDone(ANIMCHANNEL_ALL, 4)) {
 				return SRESULT_WAIT;
 			}
-			
-			if ( owner->IsFlashlightOn() ) {
-				Flashlight ( false );
-			} else {
-				Flashlight ( true );
+
+			if (owner->IsFlashlightOn()) {
+				Flashlight(false);
 			}
-			
-			SetState ( "Idle", 4 );
+			else {
+				//Flashlight(true);
+			}
+
+			SetState("Idle", 4);
 			return SRESULT_DONE;
-	}
-	return SRESULT_ERROR;
+		}
+		return SRESULT_ERROR;
 }

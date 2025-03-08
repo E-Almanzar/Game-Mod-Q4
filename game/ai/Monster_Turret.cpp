@@ -3,6 +3,7 @@
 #pragma hdrstop
 
 #include "../Game_local.h"
+#include "AI_Manager.h"
 
 class rvMonsterTurret : public idAI {
 public:
@@ -68,6 +69,9 @@ void rvMonsterTurret::Spawn ( void ) {
 
 	InitSpawnArgsVariables();
 	shots		= 0;
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 }
 
 /*
@@ -101,6 +105,9 @@ rvMonsterTurret::CheckActions
 */
 bool rvMonsterTurret::CheckActions ( void ) {
 	// Attacks
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 	if ( PerformAction ( &actionBlasterAttack, (checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerRangedAttack ) ) {
 		return true;
 	}

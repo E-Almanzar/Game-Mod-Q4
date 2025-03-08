@@ -133,6 +133,7 @@ void rvMonsterGladiator::Spawn ( void ) {
 	{
 		mPostWeaponDestroyed.Init( func );
 	}
+
 }
 
 /*
@@ -163,6 +164,9 @@ bool rvMonsterGladiator::CheckActions ( void ) {
 	if ( CheckPainActions ( ) ) {
 		return true;
 	}
+	this->team = AITEAM_MARINE;
+	aiManager.RemoveTeammate(this);
+	aiManager.AddTeammate(this);
 
 	// Limited actions with shield out
 	if ( usingShield ) {
@@ -181,6 +185,10 @@ bool rvMonsterGladiator::CheckActions ( void ) {
 				}
 			}
 		}
+		this->team = AITEAM_MARINE;
+		aiManager.RemoveTeammate(this);
+		aiManager.AddTeammate(this);
+
 		// Only ranged attack and melee attack are available when using shield
 		if ( PerformAction ( &actionMeleeAttack, (checkAction_t)&idAI::CheckAction_MeleeAttack )							    ||
 			 PerformAction ( &actionRangedAttack, (checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerRangedAttack )   ||
@@ -230,6 +238,10 @@ bool rvMonsterGladiator::CheckActions ( void ) {
 				}
 			}
 		}
+		this->team = AITEAM_MARINE;
+		aiManager.RemoveTeammate(this);
+		aiManager.AddTeammate(this);
+
 		if ( railgunHealth > 0 && PerformAction ( &actionRailgunAttack, (checkAction_t)&idAI::CheckAction_RangedAttack, &actionTimerSpecialAttack ) ) {
 			return true;
 		}
