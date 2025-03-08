@@ -3206,15 +3206,58 @@ void Cmd_Longstrider_f(const idCmdArgs& args) {
 
 }
 
-void Cmd_Invis_f(const idCmdArgs& args) {
+void Cmd_EnlargeReduce_f(const idCmdArgs& args) {
 	idPlayer* player;
 
 	player = gameLocal.GetLocalPlayer();
 	if (!player) {
 		return;
 	}
+	if (pm_normalheight.GetFloat() == 74 && pm_normalviewheight.GetFloat() == 68) {
+		pm_normalheight.SetFloat(300);
+		pm_normalviewheight.SetFloat(275);
+	}
+	else {
+		pm_normalheight.SetFloat(74);
+		pm_normalviewheight.SetFloat(68);
+	}
 
-	player->GivePowerUp(POWERUP_INVISIBILITY, SEC2MS(10.0f));
+	//player->GivePowerUp(POWERUP_INVISIBILITY, SEC2MS(10.0f));
+}
+
+void Cmd_GetXP_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	gameLocal.Printf("Your XP my liege: %f\n", pm_xp.GetFloat());
+}
+
+void Cmd_SetXP_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	if (pm_xp.GetFloat() < 10000.0f) {
+		pm_xp.SetFloat(1000.0f);
+	}
+	else {
+		pm_xp.SetFloat(0);
+	}
+}
+
+void Cmd_Add1k_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	pm_xp.SetFloat(pm_xp.GetFloat()+1000);
 }
 
 /*void Cmd_MistyStep_f(const idCmdArgs& args) {
@@ -3479,9 +3522,12 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand("JumpSpell", Cmd_JumpSpell_f, CMD_FL_GAME, "Sets the jump height to 200?");
 	//cmdSystem->AddCommand("MistyStep", Cmd_MistyStep_f, CMD_FL_GAME, "Warps to something idk ");
 	cmdSystem->AddCommand("Longstrider", Cmd_Longstrider_f, CMD_FL_GAME, "5x speed, toggle");
-	cmdSystem->AddCommand("Invis", Cmd_Invis_f, CMD_FL_GAME, "");
+	cmdSystem->AddCommand("EnlargeReduce", Cmd_EnlargeReduce_f, CMD_FL_GAME, "Enlarge/Reduce yourself");
 
-
+	cmdSystem->AddCommand("GetXP", Cmd_GetXP_f, CMD_FL_GAME, "");
+	cmdSystem->AddCommand("SetXP", Cmd_SetXP_f, CMD_FL_GAME, "");
+	cmdSystem->AddCommand("Add1k", Cmd_Add1k_f, CMD_FL_GAME, "");
+	
 }
 
 /*

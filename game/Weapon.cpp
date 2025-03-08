@@ -2500,7 +2500,7 @@ void rvWeapon::AddToClip ( int amount ) {
 /*
 ================
 rvWeapon::Attack
-================
+================ EALM Put your ammo here. Reskin each ammo in the def to be of a certain level and give it out like candy
 */
 void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuseOffset, float power ) {
 	idVec3 muzzleOrigin;
@@ -2517,6 +2517,12 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 
 	// avoid all ammo considerations on an MP client
 	if ( !gameLocal.isClient ) {
+		float xp = pm_xp.GetFloat();
+		//if () {
+		//If its name is x, then ask if xp < 1000,2000, etc and return if not ykno
+			//return;
+		//}
+		
 		// check if we're out of ammo or the clip is empty
 		int ammoAvail = owner->inventory.HasAmmo( ammoType, ammoRequired );
 		if ( !ammoAvail || ( ( clipSize != 0 ) && ( ammoClip <= 0 ) ) ) {
@@ -2552,20 +2558,17 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 	} else {
 		// go straight out of the view
 		//EALM
+		muzzleOrigin = playerViewOrigin;
 		if (spawnArgs.GetBool("IsAGrenadeLauncher")) {
 			gameLocal.Printf("Were a grenade launcher bruv");
-			muzzleOrigin = playerViewOrigin;
 			muzzleOrigin.z = muzzleOrigin.z + 500.0f;
-			muzzleAxis = playerViewAxis;
-			
-			muzzleOrigin += playerViewAxis[0] * muzzleOffset;
 		}
-		else{
-			muzzleOrigin = playerViewOrigin;
-			muzzleAxis = playerViewAxis;
-			muzzleOrigin += playerViewAxis[0] * muzzleOffset;
+		else if (spawnArgs.GetBool("IsAMachineGun")) {
+			gameLocal.Printf("Were a machine gun");
+			muzzleOrigin.x = muzzleOrigin.x + 5.0f;
 		}
-
+		muzzleAxis = playerViewAxis;
+		muzzleOrigin += playerViewAxis[0] * muzzleOffset;
 	}
 
 	// add some to the kick time, incrementally moving repeat firing weapons back

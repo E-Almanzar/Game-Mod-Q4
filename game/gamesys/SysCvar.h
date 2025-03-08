@@ -240,6 +240,7 @@ extern idCVar	pm_thirdPerson;
 extern idCVar	pm_thirdPersonDeath;
 extern idCVar	pm_modelView;
 extern idCVar	pm_airTics;
+extern idCVar	pm_xp;
 
 // RAVEN BEGIN
 // asalmon: parameters for aim assistance on Xenon
