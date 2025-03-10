@@ -232,7 +232,11 @@ stateResult_t rvWeaponMachinegun::State_Fire ( const stateParms_t& parms ) {
 				fireHeld = true;
 			} else {
 				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( false, 10, spread, 0, 1.0f );
+				//for(int i = 10; i >=0; i--){
+					Attack(false, 3, spread, 0, 1.0f);
+				//}
+				
+				//Attack ( false, 10, spread, 0, 1.0f );
 				/*pm_speed.SetFloat(90);
 				Attack(false, 10, spread, 0, 1.0f);
 				Attack(false, 10, spread, 0, 1.0f);

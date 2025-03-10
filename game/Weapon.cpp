@@ -2518,10 +2518,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 	// avoid all ammo considerations on an MP client
 	if ( !gameLocal.isClient ) {
 		float xp = pm_xp.GetFloat();
-		//if () {
-		//If its name is x, then ask if xp < 1000,2000, etc and return if not ykno
-			//return;
-		//}
+		pm_xp.SetFloat(pm_xp.GetFloat() + 100);
 		
 		// check if we're out of ammo or the clip is empty
 		int ammoAvail = owner->inventory.HasAmmo( ammoType, ammoRequired );
@@ -2565,7 +2562,14 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		}
 		else if (spawnArgs.GetBool("IsAMachineGun")) {
 			gameLocal.Printf("Were a machine gun");
-			muzzleOrigin.x = muzzleOrigin.x + 5.0f;
+			if (spawnArgs.GetBool("mgunOffset")) {
+				muzzleOrigin.y = muzzleOrigin.y + 10.0f;
+				spawnArgs.SetBool("mgunOffset", !spawnArgs.GetBool("mgunOffset"));
+			}
+			else {
+				muzzleOrigin.y = muzzleOrigin.y - 10.0f;
+				spawnArgs.SetBool("mgunOffset", !spawnArgs.GetBool("mgunOffset"));
+			}
 		}
 		muzzleAxis = playerViewAxis;
 		muzzleOrigin += playerViewAxis[0] * muzzleOffset;

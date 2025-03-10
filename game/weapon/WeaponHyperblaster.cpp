@@ -225,17 +225,23 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
+	float xp = pm_xp.GetFloat();
 	switch ( parms.stage ) {
-		case STAGE_INIT:
+	case STAGE_INIT:
 			SpinUp ( );
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
+			if (pm_xp.GetFloat() > 2000) {
 			Attack ( false, 30, spread, 0, 1.0f );
-			if ( ClipSize() ) {
-				viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, (float)AmmoInClip()/ClipSize() );
-			} else {
-				viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, 1.0f );		
+				if ( ClipSize() ) {
+					viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, (float)AmmoInClip()/ClipSize() );
+				} else {
+					viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, 1.0f );		
+				}
+				PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );
 			}
-			PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );	
+			else {
+				gameLocal.Printf("You don't have the level required to cast this");
+			}
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
 		case STAGE_WAIT:		

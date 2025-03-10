@@ -389,6 +389,7 @@ public:
 	float							weaponAngleOffsetMax;
 	float							weaponOffsetTime;
 	float							weaponOffsetScale;
+	bool							mgunOffset;
 
 	// General
 	idStr							icon;

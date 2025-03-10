@@ -399,7 +399,10 @@ stateResult_t rvWeaponBlaster::State_Charged ( const stateParms_t& parms ) {
 rvWeaponBlaster::State_Fire
 ================
 */
-stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
+stateResult_t rvWeaponBlaster::State_Fire(const stateParms_t& parms) {
+	//Still broken? it doesnt like shooting rays? or what happens if ent isnt getting anything?
+	trace_t		tr;
+	idEntity* ent;
 	enum {
 		FIRE_INIT,
 		FIRE_WAIT,
@@ -425,14 +428,50 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				SetState ( "Idle", 4 );
 				return SRESULT_DONE;
 			}
+			//EALM
+			gameLocal.TracePoint(owner, tr,
+				playerViewOrigin,
+				playerViewOrigin + playerViewAxis[0] * 100000,
+				MASK_SHOT_RENDERMODEL, owner);
+			// RAVEN END
+			owner->WeaponFireFeedback(&weaponDef->dict);
 
+			//if (tr.fraction >= 1.0f) {
+			//	SetState("Idle", 4);
+			//	return SRESULT_DONE;
+			//}
 
+			// Entity we hit?
+			ent = gameLocal.entities[tr.c.entityNum];
+
+			//EALM END
 	
 			if (gameLocal.time - fireHeldTime > chargeTime) {
+
 				Attack ( true, 1, spread, 0, 1.0f );
 				PlayEffect ( "fx_chargedflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames );
 			} else {
+				//EALM AGAIN
+				if (ent) {
+					if (ent->fl.takedamage) {
+						float dmgScale = 1.0f;
+						//dmgScale *= owner->PowerUpModifier(PMOD_MELEE_DAMAGE);
+						//for (int i = 0; i < 1000; i++) {
+							ent->Damage(owner, owner, playerViewAxis[0], spawnArgs.GetString("def_damage"), dmgScale, 0);
+						//}
+						
+
+						//PlayAnim(ANIMCHANNEL_ALL, "fire", parms.blendFrames);
+						//StartSound("snd_hit", SND_CHANNEL_ANY, 0, false, NULL);
+						gameLocal.Printf("Ent take dmg?\n");
+					}
+					gameLocal.Printf("Yes ent\n");
+				}
+				else {
+					gameLocal.Printf("No ent\n");
+				}
+				//EALM END 2
 				Attack ( false, 1, 0, 0, 2.0f );
 				PlayEffect ( "fx_normalflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "fire", parms.blendFrames );
@@ -456,6 +495,96 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 	}			
 	return SRESULT_ERROR;
 }
+
+/*stateResult_t rvWeaponBlaster::State_Fire(const stateParms_t& parms) {
+	trace_t		tr;
+	idEntity*	ent;
+	enum {
+		FIRE_INIT,
+		FIRE_WAIT,
+	};
+	switch (parms.stage) {
+	case FIRE_INIT:
+		idPlayer* player;
+		player = gameLocal.GetLocalPlayer();
+
+		if (player && player->GuiActive()) {
+			fireHeldTime = 0;
+			SetState("Lower", 0);
+			return SRESULT_DONE;
+		}
+
+		if (player && !player->CanFire()) {
+			fireHeldTime = 0;
+			SetState("Idle", 4);
+			return SRESULT_DONE;
+		}
+
+
+		// Cast a ray out to the lock range
+		gameLocal.TracePoint(owner, tr,
+			playerViewOrigin,
+			playerViewOrigin + playerViewAxis[0] * 32,
+			MASK_SHOT_RENDERMODEL, owner);
+		// RAVEN END
+		owner->WeaponFireFeedback(&weaponDef->dict);
+
+		if (tr.fraction >= 1.0f) {
+			SetState("Idle", 4);
+			return SRESULT_DONE;
+		}
+
+		// Entity we hit?
+		ent = gameLocal.entities[tr.c.entityNum];
+
+		// In singleplayer-- the gauntlet never effects marine AI
+		/*if (!gameLocal.isMultiplayer) {
+			idActor* actor_ent = 0;
+
+			//ignore both the body and the head.
+			if (ent->IsType(idActor::GetClassType())) {
+				actor_ent = static_cast<idActor*>(ent);
+			}
+			else if (ent->IsType(idAFAttachment::GetClassType())) {
+				actor_ent = static_cast<idActor*>(ent->GetBindMaster());
+			}
+
+			if (actor_ent && actor_ent->team == gameLocal.GetLocalPlayer()->team) {
+				SetState("Idle", 4);
+				return SRESULT_DONE;
+			}
+		}
+
+		// Do damage?
+		if (gameLocal.time > nextAttackTime) {
+			if (ent) {
+				if (ent->fl.takedamage) {
+					float dmgScale = 300.0f;
+					//dmgScale *= owner->PowerUpModifier(PMOD_MELEE_DAMAGE);
+					ent->Damage(owner, owner, playerViewAxis[0], spawnArgs.GetString("def_damage"), dmgScale, 0);
+					PlayAnim(ANIMCHANNEL_ALL, "fire", parms.blendFrames);
+					//StartSound("snd_hit", SND_CHANNEL_ANY, 0, false, NULL);
+				}
+			}
+			nextAttackTime = gameLocal.time + fireRate;
+			return SRESULT_STAGE(FIRE_WAIT);
+		}
+		case FIRE_WAIT:
+
+			if (AnimDone(ANIMCHANNEL_ALL, 4)) {
+				SetState("Idle", 4);
+				return SRESULT_DONE;
+			}
+			if (UpdateAttack()) {
+				//	if (UpdateFlashlight() || UpdateAttack()) {
+
+				return SRESULT_DONE;
+			}
+			return SRESULT_WAIT;
+	}
+	return SRESULT_ERROR;
+}*/
+
 
 /*
 ================

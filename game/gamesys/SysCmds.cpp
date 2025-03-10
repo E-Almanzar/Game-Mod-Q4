@@ -3225,6 +3225,24 @@ void Cmd_EnlargeReduce_f(const idCmdArgs& args) {
 	//player->GivePowerUp(POWERUP_INVISIBILITY, SEC2MS(10.0f));
 }
 
+void Cmd_TimeStop_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	if (pm_xp.GetFloat() < 10000.0f) {
+		gameLocal.Printf("You're Too Weak to Stop Time");
+	}
+	else {
+		Sleep(30000);
+	}
+
+
+}
+
+
 void Cmd_GetXP_f(const idCmdArgs& args) {
 	idPlayer* player;
 
@@ -3523,6 +3541,7 @@ void idGameLocal::InitConsoleCommands( void ) {
 	//cmdSystem->AddCommand("MistyStep", Cmd_MistyStep_f, CMD_FL_GAME, "Warps to something idk ");
 	cmdSystem->AddCommand("Longstrider", Cmd_Longstrider_f, CMD_FL_GAME, "5x speed, toggle");
 	cmdSystem->AddCommand("EnlargeReduce", Cmd_EnlargeReduce_f, CMD_FL_GAME, "Enlarge/Reduce yourself");
+	cmdSystem->AddCommand("TimeStop", Cmd_TimeStop_f, CMD_FL_GAME, "Enlarge/Reduce yourself");
 
 	cmdSystem->AddCommand("GetXP", Cmd_GetXP_f, CMD_FL_GAME, "");
 	cmdSystem->AddCommand("SetXP", Cmd_SetXP_f, CMD_FL_GAME, "");
