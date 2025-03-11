@@ -3041,10 +3041,17 @@ void Cmd_spawnThatGrunt_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-	gameLocal.SpawnEntityDef(dict, &newEnt);
-	if (newEnt) {
-		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	float xpcost = 2000;
+	if (pm_xp.GetFloat() > xpcost) {
+		gameLocal.SpawnEntityDef(dict, &newEnt);
 	}
+	else {
+		if(newEnt)
+		gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+	}
+	//if (newEnt) {
+	//	gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	//}
 }
 void Cmd_spawnThatGladiator_f(const idCmdArgs& args) {
 	const char* key, * value;
@@ -3071,7 +3078,16 @@ void Cmd_spawnThatGladiator_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-	gameLocal.SpawnEntityDef(dict, &newEnt);
+	//gameLocal.SpawnEntityDef(dict, &newEnt);
+	
+	float xpcost = 4000;
+	if (pm_xp.GetFloat() > xpcost) {
+		gameLocal.SpawnEntityDef(dict, &newEnt);
+	}
+	else {
+		if (newEnt)
+			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+	}
 	if (newEnt) {
 		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
 	}
@@ -3132,7 +3148,16 @@ void Cmd_spawnThatSci_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-	gameLocal.SpawnEntityDef(dict, &newEnt);
+	//gameLocal.SpawnEntityDef(dict, &newEnt);
+	//AMMO HERE
+	float xpcost = 1000;
+	if (pm_xp.GetFloat() > xpcost) {
+		gameLocal.SpawnEntityDef(dict, &newEnt);
+	}
+	else {
+		if (newEnt)
+			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+	}
 	if (newEnt) {
 		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
 	}
@@ -3163,7 +3188,16 @@ void Cmd_spawnThatBBuddy_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-	gameLocal.SpawnEntityDef(dict, &newEnt);
+	//gameLocal.SpawnEntityDef(dict, &newEnt);
+	//AMMO HERE
+	float xpcost = 6000;
+	if (pm_xp.GetFloat() > xpcost) {
+		gameLocal.SpawnEntityDef(dict, &newEnt);
+	}
+	else {
+		if (newEnt)
+			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+	}
 	if (newEnt) {
 		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
 	}
@@ -3177,8 +3211,6 @@ void Cmd_JumpSpell_f(const idCmdArgs& args) {
 	if (!player) {
 		return;
 	}
-	//idPhysics_Player physicsObj;
-	//physicsObj.SetSelf(player);
 	if (pm_jumpheight.GetFloat() == 48) {
 		pm_jumpheight.SetFloat(200);
 	}
@@ -3197,11 +3229,19 @@ void Cmd_Longstrider_f(const idCmdArgs& args) {
 	}
 	//idPhysics_Player physicsObj;
 	//physicsObj.SetSelf(player);
-	if (pm_speed.GetFloat() == 160) {
-		pm_speed.SetFloat(750);
+
+	//AMMO HERE
+	float xpcost = 1000;
+	if (pm_xp.GetFloat() > xpcost) {
+		if (pm_speed.GetFloat() == 160) {
+			pm_speed.SetFloat(750);
+		}
+		else {
+			pm_speed.SetFloat(160);
+		}
 	}
 	else {
-		pm_speed.SetFloat(160);
+		gameLocal.Printf("You can't cast Longstrider yet. You need %f xp to cast this spell\n", xpcost);
 	}
 
 }
@@ -3209,19 +3249,27 @@ void Cmd_Longstrider_f(const idCmdArgs& args) {
 void Cmd_EnlargeReduce_f(const idCmdArgs& args) {
 	idPlayer* player;
 
-	player = gameLocal.GetLocalPlayer();
-	if (!player) {
-		return;
-	}
-	if (pm_normalheight.GetFloat() == 74 && pm_normalviewheight.GetFloat() == 68) {
-		pm_normalheight.SetFloat(300);
-		pm_normalviewheight.SetFloat(275);
+
+	//AMMO HERE
+	float xpcost = 2000;
+	if (pm_xp.GetFloat() > xpcost) {
+		player = gameLocal.GetLocalPlayer();
+		if (!player) {
+			return;
+		}
+		if (pm_normalheight.GetFloat() == 74 && pm_normalviewheight.GetFloat() == 68) {
+			pm_normalheight.SetFloat(300);
+			pm_normalviewheight.SetFloat(275);
+		}
+		else {
+			pm_normalheight.SetFloat(74);
+			pm_normalviewheight.SetFloat(68);
+		}
+
 	}
 	else {
-		pm_normalheight.SetFloat(74);
-		pm_normalviewheight.SetFloat(68);
+		gameLocal.Printf("You can't cast Enlarge/Reduce yet. You need %f xp to cast this spell\n", xpcost);
 	}
-
 	//player->GivePowerUp(POWERUP_INVISIBILITY, SEC2MS(10.0f));
 }
 
@@ -3232,16 +3280,40 @@ void Cmd_TimeStop_f(const idCmdArgs& args) {
 	if (!player) {
 		return;
 	}
-	if (pm_xp.GetFloat() < 10000.0f) {
-		gameLocal.Printf("You're Too Weak to Stop Time");
+
+	//AMMO HERE
+	float xpcost = 7000;
+	if (pm_xp.GetFloat() > xpcost) {
+		Sleep(5000);
+
 	}
 	else {
-		Sleep(30000);
+		gameLocal.Printf("You can't cast Timestop yet. You need %f xp to cast this spell\n", xpcost);
 	}
 
 
 }
 
+void Cmd_Heroism_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+	//AMMO HERE
+	float xpcost = 4000;
+	if (pm_xp.GetFloat() > xpcost) {
+		player->HeroismTimer = gameLocal.time;
+		player->godmode = true;
+		//gameLocal.Printf("You're a HERO!\n");
+	}
+	else {
+		gameLocal.Printf("You can't cast Heroism yet. You need %f xp to cast this spell\n", xpcost);
+	}
+
+
+}
 
 void Cmd_GetXP_f(const idCmdArgs& args) {
 	idPlayer* player;
@@ -3266,6 +3338,7 @@ void Cmd_SetXP_f(const idCmdArgs& args) {
 	else {
 		pm_xp.SetFloat(0);
 	}
+	gameLocal.Printf("Current XP: %f\n", pm_xp.GetFloat());
 }
 
 void Cmd_Add1k_f(const idCmdArgs& args) {
@@ -3276,41 +3349,30 @@ void Cmd_Add1k_f(const idCmdArgs& args) {
 		return;
 	}
 	pm_xp.SetFloat(pm_xp.GetFloat()+1000);
+	gameLocal.Printf("Current XP: %f\n", pm_xp.GetFloat());
 }
 
-/*void Cmd_MistyStep_f(const idCmdArgs& args) {
-	idVec3		origin;
-	idAngles	angles;
+void Cmd_rm1k_f(const idCmdArgs& args) {
 	idPlayer* player;
-	idEntity* ent;
 
 	player = gameLocal.GetLocalPlayer();
 	if (!player) {
 		return;
 	}
+	pm_xp.SetFloat(pm_xp.GetFloat() - 1000);
+	gameLocal.Printf("Current XP: %f\n", pm_xp.GetFloat());
+}
 
-	if (args.Argc() != 2) {
-		gameLocal.Printf("usage: teleport <name of entity to teleport to>\n");
+void Cmd_setZero_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
 		return;
 	}
-
-	//idEntity* newEnt = NULL;
-	//gameLocal.SpawnEntityDef(dict, &newEnt);
-	ent = gameLocal.FindEntity(args.Argv(1));
-	//ent = gameLocal.FindEntity("monster_grunt");
-	if (!ent) {
-		gameLocal.Printf("entity not found\n");
-		return;
-	}
-
-	gameLocal.Printf("%s",args.Argv(1));
-	angles.Zero();
-	angles.yaw = ent->GetPhysics()->GetAxis()[0].ToYaw();
-	origin = ent->GetPhysics()->GetOrigin();
-
-	player->Teleport(origin, angles, ent);
-}*/
-
+	pm_xp.SetFloat(0);
+	gameLocal.Printf("Current XP: %f\n", pm_xp.GetFloat());
+}
 
 void Cmd_CheckSave_f( const idCmdArgs &args );
 
@@ -3542,11 +3604,13 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand("Longstrider", Cmd_Longstrider_f, CMD_FL_GAME, "5x speed, toggle");
 	cmdSystem->AddCommand("EnlargeReduce", Cmd_EnlargeReduce_f, CMD_FL_GAME, "Enlarge/Reduce yourself");
 	cmdSystem->AddCommand("TimeStop", Cmd_TimeStop_f, CMD_FL_GAME, "Enlarge/Reduce yourself");
+	cmdSystem->AddCommand("Heroism", Cmd_Heroism_f, CMD_FL_GAME, "Enlarge/Reduce yourself");
 
 	cmdSystem->AddCommand("GetXP", Cmd_GetXP_f, CMD_FL_GAME, "");
 	cmdSystem->AddCommand("SetXP", Cmd_SetXP_f, CMD_FL_GAME, "");
 	cmdSystem->AddCommand("Add1k", Cmd_Add1k_f, CMD_FL_GAME, "");
-	
+	cmdSystem->AddCommand("rm1k", Cmd_rm1k_f, CMD_FL_GAME, "");
+	cmdSystem->AddCommand("rm1k", Cmd_setZero_f, CMD_FL_GAME, "");
 }
 
 /*

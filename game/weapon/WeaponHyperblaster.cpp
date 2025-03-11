@@ -27,6 +27,7 @@ protected:
 
 	void					SpinUp				( void );
 	void					SpinDown			( void );
+	float xpcost = 1000;
 
 private:
 
@@ -230,7 +231,9 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 	case STAGE_INIT:
 			SpinUp ( );
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			if (pm_xp.GetFloat() > 2000) {
+
+
+			if (pm_xp.GetFloat() > xpcost) {
 			Attack ( false, 30, spread, 0, 1.0f );
 				if ( ClipSize() ) {
 					viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, (float)AmmoInClip()/ClipSize() );
@@ -240,7 +243,7 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 				PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );
 			}
 			else {
-				gameLocal.Printf("You don't have the level required to cast this");
+				gameLocal.Printf("You can't cast Chromatic Orb yet. You need %f xp to cast this spell\n", xpcost);
 			}
 			return SRESULT_STAGE ( STAGE_WAIT );
 	

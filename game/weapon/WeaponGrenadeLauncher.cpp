@@ -27,7 +27,8 @@ private:
 
 	const char*			GetFireAnim() const { return (!AmmoInClip()) ? "fire_empty" : "fire"; }
 	const char*			GetIdleAnim() const { return (!AmmoInClip()) ? "idle_empty" : "idle"; }
-	
+	float xpcost = 4000;
+
 	CLASS_STATES_PROTOTYPE ( rvWeaponGrenadeLauncher );
 };
 
@@ -146,12 +147,12 @@ stateResult_t rvWeaponGrenadeLauncher::State_Fire ( const stateParms_t& parms ) 
 		case STAGE_INIT:
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			
-			if (pm_xp.GetFloat() > 5000) {
+			if (pm_xp.GetFloat() > xpcost) {
 				Attack(false, 50, spread, 0, 10.0f);
 				PlayAnim ( ANIMCHANNEL_ALL, GetFireAnim(), 0 );	
 			}
 			else {
-				gameLocal.Printf("You don't have the level required to cast this");
+				gameLocal.Printf("You can't cast Meteor Swarm yet. You need %f xp to cast this spell\n", xpcost);
 			}
 			return SRESULT_STAGE ( STAGE_WAIT );
 	

@@ -445,31 +445,35 @@ stateResult_t rvWeaponBlaster::State_Fire(const stateParms_t& parms) {
 			ent = gameLocal.entities[tr.c.entityNum];
 
 			//EALM END
-	
+			
 			if (gameLocal.time - fireHeldTime > chargeTime) {
 
-				Attack ( true, 1, spread, 0, 1.0f );
+				//Attack ( true, 1, spread, 0, 1.0f );
 				PlayEffect ( "fx_chargedflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames );
 			} else {
 				//EALM AGAIN
+				
 				if (ent) {
 					if (ent->fl.takedamage) {
 						float dmgScale = 1.0f;
 						//dmgScale *= owner->PowerUpModifier(PMOD_MELEE_DAMAGE);
 						//for (int i = 0; i < 1000; i++) {
-							ent->Damage(owner, owner, playerViewAxis[0], spawnArgs.GetString("def_damage"), dmgScale, 0);
+						ent->isPoisoned = 1;
+						ent->poisonTime = gameLocal.time;
+						ent->tickCount = 5;
+						ent->Damage(owner, owner, playerViewAxis[0], spawnArgs.GetString("def_damage"), dmgScale, 0);
 						//}
 						
 
 						//PlayAnim(ANIMCHANNEL_ALL, "fire", parms.blendFrames);
 						//StartSound("snd_hit", SND_CHANNEL_ANY, 0, false, NULL);
-						gameLocal.Printf("Ent take dmg?\n");
+						//gameLocal.Printf("Ent take dmg?\n");
 					}
-					gameLocal.Printf("Yes ent\n");
+					//gameLocal.Printf("Yes ent\n");
 				}
 				else {
-					gameLocal.Printf("No ent\n");
+					//gameLocal.Printf("No ent\n");
 				}
 				//EALM END 2
 				Attack ( false, 1, 0, 0, 2.0f );

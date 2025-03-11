@@ -139,6 +139,11 @@ idAI::idAI ( void ) {
 	actionAnimNum	= 0;
 	actionSkipTime	= 0;
 	actionTime		= 0;
+
+	//EALM?
+	isPoisoned = 0;
+	poisonTime = 0;
+	tickCount = 0;
 }
 
 /*
@@ -2095,6 +2100,24 @@ void idAI::UpdateEnemy ( void ) {
 		combat.aggressiveScale = (g_skill.GetFloat() / MAX_SKILL_LEVELS);
 		combat.aggressiveScale *= 1.0f - idMath::ClampFloat ( 0.0f, 1.0f, enemy.range / combat.aggressiveRange );
 		combat.aggressiveScale += 1.0f;
+	}
+
+	
+	//EALM
+	if (isPoisoned == 1) {
+		if (tickCount > 0) {
+			if (gameLocal.time - poisonTime > SEC2MS(2)) {
+				//deincriment ticks, do damage, make new time
+				tickCount--;
+				this->Damage(NULL, NULL, idVec3(NULL, NULL, NULL), "damage_bpoison", 25, 0);
+				poisonTime = gameLocal.time;
+				
+			}
+		}
+		else {
+			isPoisoned = 0;
+			poisonTime = 0;
+		}
 	}
 }
 

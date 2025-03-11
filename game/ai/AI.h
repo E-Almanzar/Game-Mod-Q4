@@ -852,6 +852,12 @@ public:
 	int						flagOverrides;
 
 	float					announceRate;			// How often (0 - 1.0f) the AI will make certain announcements.
+	
+	//EALM
+	//bool					isPoisoned;
+	//float					poisonTime;
+	//int						tickCount;
+
 
 	rvAICombat_t			combat;					// Members related to combat state
 	rvAIPassive_t			passive;				// Members related to passive state

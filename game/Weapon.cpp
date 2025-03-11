@@ -2557,19 +2557,31 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		//EALM
 		muzzleOrigin = playerViewOrigin;
 		if (spawnArgs.GetBool("IsAGrenadeLauncher")) {
-			gameLocal.Printf("Were a grenade launcher bruv");
+			//gameLocal.Printf("Were a grenade launcher bruv");
 			muzzleOrigin.z = muzzleOrigin.z + 500.0f;
 		}
 		else if (spawnArgs.GetBool("IsAMachineGun")) {
-			gameLocal.Printf("Were a machine gun");
-			if (spawnArgs.GetBool("mgunOffset")) {
+			bool isOn = spawnArgs.GetBool("mgunToggle");
+			float scale = 10;
+			if(!isOn && spawnArgs.GetFloat("mgunOffset") < scale*10){
+				spawnArgs.SetFloat("mgunOffset", spawnArgs.GetFloat("mgunOffset") + scale);
+			}
+			else if(isOn && spawnArgs.GetFloat("mgunOffset") > scale*-10){
+				spawnArgs.SetFloat("mgunOffset", spawnArgs.GetFloat("mgunOffset") - scale);
+			}
+			else {
+				spawnArgs.SetBool("mgunToggle", !spawnArgs.GetBool("mgunToggle"));
+			}
+			muzzleOrigin.y = muzzleOrigin.y + spawnArgs.GetFloat("mgunOffset");
+			//gameLocal.Printf("Were a machine gun");
+			/*if (spawnArgs.GetBool("mgunOffset")) {
 				muzzleOrigin.y = muzzleOrigin.y + 10.0f;
 				spawnArgs.SetBool("mgunOffset", !spawnArgs.GetBool("mgunOffset"));
 			}
 			else {
 				muzzleOrigin.y = muzzleOrigin.y - 10.0f;
 				spawnArgs.SetBool("mgunOffset", !spawnArgs.GetBool("mgunOffset"));
-			}
+			}*/
 		}
 		muzzleAxis = playerViewAxis;
 		muzzleOrigin += playerViewAxis[0] * muzzleOffset;

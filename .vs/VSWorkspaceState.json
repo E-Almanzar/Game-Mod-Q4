@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\game",
+    "\\game\\ai",
     "\\game\\gamesys",
     "\\idlib",
     "\\mpgame"
   ],
-  "SelectedNode": "\\game\\gamesys\\SysCmds.cpp",
+  "SelectedNode": "\\game\\ai\\AI.cpp",
   "PreviewInSolutionExplorer": false
 }

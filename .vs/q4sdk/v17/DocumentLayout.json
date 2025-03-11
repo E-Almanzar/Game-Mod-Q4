@@ -3,77 +3,52 @@
   "WorkspaceRootPath": "C:\\Git\\Game-Mod-Q4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCmds.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\gamesys\\SysCmds.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCvar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\gamesys\\SysCvar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponBlaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\ai\\AI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\AI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\ai\\AI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\AI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\ai\\AI_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\AI_Manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Berserker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\Monster_Berserker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Grunt.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\Monster_Grunt.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\napalmgun.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponHyperblaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponHyperblaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponNapalmGun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponNapalmGun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ammo.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Turret.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\Monster_Turret.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Beth\\AppData\\Local\\Temp\\7zOCD445C2D\\monster_turret.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCvar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\gamesys\\SysCvar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\blaster.def||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCmds.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\gamesys\\SysCmds.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponBlaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponMachinegun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponMachinegun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGrenadeLauncher.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponGrenadeLauncher.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGauntlet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponGauntlet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ai\\monster_grunt.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -82,22 +57,8 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponMachinegun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponMachinegun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGrenadeLauncher.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponGrenadeLauncher.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\grenadelauncher.def||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -113,10 +74,6 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\railgun.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Git\\Game-Mod-Q4\\game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\powerups.def||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -127,7 +84,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -135,241 +92,137 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AI.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\ai\\AI.cpp",
-              "RelativeDocumentMoniker": "game\\ai\\AI.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\ai\\AI.cpp",
-              "RelativeToolTip": "game\\ai\\AI.cpp",
-              "ViewState": "AgIAAMcHAAAAAAAAAAAAAMsHAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T20:22:01.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AI.h",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\ai\\AI.h",
-              "RelativeDocumentMoniker": "game\\ai\\AI.h",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\ai\\AI.h",
-              "RelativeToolTip": "game\\ai\\AI.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-09T20:22:01.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AI_Manager.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\ai\\AI_Manager.cpp",
-              "RelativeDocumentMoniker": "game\\ai\\AI_Manager.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\ai\\AI_Manager.cpp",
-              "RelativeToolTip": "game\\ai\\AI_Manager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T20:21:50.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Monster_Berserker.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Berserker.cpp",
-              "RelativeDocumentMoniker": "game\\ai\\Monster_Berserker.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Berserker.cpp",
-              "RelativeToolTip": "game\\ai\\Monster_Berserker.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T20:21:04.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Monster_Grunt.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Grunt.cpp",
-              "RelativeDocumentMoniker": "game\\ai\\Monster_Grunt.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Grunt.cpp",
-              "RelativeToolTip": "game\\ai\\Monster_Grunt.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T20:20:58.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "monster_turret.def",
-              "DocumentMoniker": "C:\\Users\\Beth\\AppData\\Local\\Temp\\7zOCD445C2D\\monster_turret.def",
-              "RelativeDocumentMoniker": "..\\..\\Users\\Beth\\AppData\\Local\\Temp\\7zOCD445C2D\\monster_turret.def",
-              "ToolTip": "C:\\Users\\Beth\\AppData\\Local\\Temp\\7zOCD445C2D\\monster_turret.def",
-              "RelativeToolTip": "..\\..\\Users\\Beth\\AppData\\Local\\Temp\\7zOCD445C2D\\monster_turret.def",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAvwJUAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-09T19:30:24.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Monster_Turret.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Turret.cpp",
-              "RelativeDocumentMoniker": "game\\ai\\Monster_Turret.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\ai\\Monster_Turret.cpp",
-              "RelativeToolTip": "game\\ai\\Monster_Turret.cpp",
-              "ViewState": "AgIAALYAAAAAAAAAAAAcwMUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T19:28:34.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WeaponBlaster.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp",
-              "RelativeDocumentMoniker": "game\\weapon\\WeaponBlaster.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp",
-              "RelativeToolTip": "game\\weapon\\WeaponBlaster.cpp",
-              "ViewState": "AgIAAM8BAAAAAAAAAAAAAOABAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T15:08:04.777Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SysCvar.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCvar.cpp",
-              "RelativeDocumentMoniker": "game\\gamesys\\SysCvar.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCvar.cpp",
-              "RelativeToolTip": "game\\gamesys\\SysCvar.cpp",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAAAFkBAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-08T22:53:20.418Z",
+              "Title": "ammo.def",
+              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ammo.def",
+              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ammo.def",
+              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ammo.def",
+              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ammo.def",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2025-03-11T00:41:43.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Player.cpp",
-              "RelativeDocumentMoniker": "game\\Player.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\Player.cpp",
-              "RelativeToolTip": "game\\Player.cpp",
-              "ViewState": "AgIAAOcAAAAAAAAAAAAcwPUAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-08T12:17:59.627Z",
+              "Title": "hyperblaster.def",
+              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
+              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
+              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
+              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAgwFIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2025-03-08T19:04:41.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "WeaponHyperblaster.cpp",
+              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponHyperblaster.cpp",
+              "RelativeDocumentMoniker": "game\\weapon\\WeaponHyperblaster.cpp",
+              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponHyperblaster.cpp",
+              "RelativeToolTip": "game\\weapon\\WeaponHyperblaster.cpp",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-11T00:28:52.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WeaponBlaster.cpp",
+              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp",
+              "RelativeDocumentMoniker": "game\\weapon\\WeaponBlaster.cpp",
+              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp",
+              "RelativeToolTip": "game\\weapon\\WeaponBlaster.cpp",
+              "ViewState": "AgIAALsBAAAAAAAAAIAwwMwBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-10T20:18:19.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "SysCmds.cpp",
               "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCmds.cpp",
               "RelativeDocumentMoniker": "game\\gamesys\\SysCmds.cpp",
               "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCmds.cpp",
               "RelativeToolTip": "game\\gamesys\\SysCmds.cpp",
-              "ViewState": "AgIAANgBAAAAAAAAAAAcwOUBAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAP8NAAAAAAAAAAAAABsOAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-18T20:19:45.204Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SysCvar.h",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCvar.h",
-              "RelativeDocumentMoniker": "game\\gamesys\\SysCvar.h",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\gamesys\\SysCvar.h",
-              "RelativeToolTip": "game\\gamesys\\SysCvar.h",
-              "ViewState": "AgIAANQAAAAAAAAAAAAcwPIAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-08T22:52:01.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "blaster.def",
-              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\blaster.def",
-              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\blaster.def",
-              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\blaster.def",
-              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\blaster.def",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAvwEkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-08T16:42:20.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Entity.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Entity.cpp",
-              "RelativeDocumentMoniker": "game\\Entity.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\Entity.cpp",
-              "RelativeToolTip": "game\\Entity.cpp",
-              "ViewState": "AgIAAEEOAAAAAAAAAAAcwE8OAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T16:31:25.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "WeaponNapalmGun.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponNapalmGun.cpp",
-              "RelativeDocumentMoniker": "game\\weapon\\WeaponNapalmGun.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponNapalmGun.cpp",
-              "RelativeToolTip": "game\\weapon\\WeaponNapalmGun.cpp",
-              "ViewState": "AgIAAIsBAAAAAAAAAAAAAJgBAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-08T16:35:29.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "napalmgun.def",
-              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\napalmgun.def",
-              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\napalmgun.def",
-              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\napalmgun.def",
-              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\napalmgun.def",
-              "ViewState": "AgIAACcBAAAAAAAAAAAvwC4BAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-08T16:38:53.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "WeaponHyperblaster.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponHyperblaster.cpp",
-              "RelativeDocumentMoniker": "game\\weapon\\WeaponHyperblaster.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponHyperblaster.cpp",
-              "RelativeToolTip": "game\\weapon\\WeaponHyperblaster.cpp",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAcwOcAAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-08T19:04:26.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "Weapon.cpp",
               "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Weapon.cpp",
               "RelativeDocumentMoniker": "game\\Weapon.cpp",
               "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\Weapon.cpp",
               "RelativeToolTip": "game\\Weapon.cpp",
-              "ViewState": "AgIAAIQCAAAAAAAAAAAcwI8CAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAANUJAAAAAAAAAIAwwOwJAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-08T17:10:50.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 5,
+              "Title": "machinegun.def",
+              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
+              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
+              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
+              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwGsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2025-03-08T18:43:01.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WeaponGrenadeLauncher.cpp",
+              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGrenadeLauncher.cpp",
+              "RelativeDocumentMoniker": "game\\weapon\\WeaponGrenadeLauncher.cpp",
+              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGrenadeLauncher.cpp",
+              "RelativeToolTip": "game\\weapon\\WeaponGrenadeLauncher.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-09T13:41:03.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Player.h",
+              "RelativeDocumentMoniker": "game\\Player.h",
+              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\Player.h",
+              "RelativeToolTip": "game\\Player.h",
+              "ViewState": "AgIAAMoDAAAAAAAAAIAwwN0DAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-08T13:45:40.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Player.cpp",
+              "RelativeDocumentMoniker": "game\\Player.cpp",
+              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\Player.cpp",
+              "RelativeToolTip": "game\\Player.cpp",
+              "ViewState": "AgIAAN0CAAAAAAAAAAAAAEUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-10T23:57:40.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "WeaponGauntlet.cpp",
               "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGauntlet.cpp",
               "RelativeDocumentMoniker": "game\\weapon\\WeaponGauntlet.cpp",
@@ -377,38 +230,24 @@
               "RelativeToolTip": "game\\weapon\\WeaponGauntlet.cpp",
               "ViewState": "AgIAABEBAAAAAAAAAAAcwB0BAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T15:02:48.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T15:02:48.292Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "gauntlet.def",
-              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
-              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
-              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
-              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAvwNMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-09T15:00:32.965Z",
+              "DocumentIndex": 9,
+              "Title": "WeaponMachinegun.cpp",
+              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponMachinegun.cpp",
+              "RelativeDocumentMoniker": "game\\weapon\\WeaponMachinegun.cpp",
+              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponMachinegun.cpp",
+              "RelativeToolTip": "game\\weapon\\WeaponMachinegun.cpp",
+              "ViewState": "AgIAANoAAAAAAAAAAAAgwPEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-08T18:04:33.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "dmg.def",
-              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
-              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
-              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
-              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAvwE8BAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-09T14:58:49.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
               "Title": "powerups.def",
               "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\powerups.def",
               "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\powerups.def",
@@ -420,55 +259,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "hyperblaster.def",
-              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
-              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
-              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
-              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\hyperblaster.def",
-              "ViewState": "AgIAAEsBAAAAAAAAAAAvwH8AAAAOAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "dmg.def",
+              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
+              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
+              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
+              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\dmg.def",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAvwE8BAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-08T19:04:41.076Z"
+              "WhenOpened": "2025-03-09T14:58:49.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "WeaponGrenadeLauncher.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGrenadeLauncher.cpp",
-              "RelativeDocumentMoniker": "game\\weapon\\WeaponGrenadeLauncher.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponGrenadeLauncher.cpp",
-              "RelativeToolTip": "game\\weapon\\WeaponGrenadeLauncher.cpp",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJkAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-09T13:41:03.271Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "machinegun.def",
-              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
-              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
-              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
-              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\machinegun.def",
-              "ViewState": "AgIAAHcBAAAAAAAAAAAvwIQBAAAEAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "monster_grunt.def",
+              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ai\\monster_grunt.def",
+              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ai\\monster_grunt.def",
+              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ai\\monster_grunt.def",
+              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\ai\\monster_grunt.def",
+              "ViewState": "AgIAABkCAAAAAAAAAAAgwCsCAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
-              "WhenOpened": "2025-03-08T18:43:01.327Z"
+              "WhenOpened": "2025-03-10T20:54:45.268Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "WeaponMachinegun.cpp",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponMachinegun.cpp",
-              "RelativeDocumentMoniker": "game\\weapon\\WeaponMachinegun.cpp",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponMachinegun.cpp",
-              "RelativeToolTip": "game\\weapon\\WeaponMachinegun.cpp",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAgwOsAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-08T18:04:33.704Z"
+              "DocumentIndex": 13,
+              "Title": "gauntlet.def",
+              "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
+              "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
+              "ToolTip": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
+              "RelativeToolTip": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\gauntlet.def",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAvwNMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2025-03-09T15:00:32.965Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 15,
               "Title": "Weapon.h",
               "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Weapon.h",
               "RelativeDocumentMoniker": "game\\Weapon.h",
@@ -480,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 16,
               "Title": "grenadelauncher.def",
               "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\grenadelauncher.def",
               "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\grenadelauncher.def",
@@ -492,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 17,
               "Title": "player.def",
               "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\player.def",
               "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\player.def",
@@ -504,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 18,
               "Title": "WeaponRailgun.cpp",
               "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\weapon\\WeaponRailgun.cpp",
               "RelativeDocumentMoniker": "game\\weapon\\WeaponRailgun.cpp",
@@ -516,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 19,
               "Title": "railgun.def",
               "DocumentMoniker": "C:\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\railgun.def",
               "RelativeDocumentMoniker": "..\\..\\SteamLibrary\\steamapps\\common\\Quake 4\\wizard\\def\\weapons\\railgun.def",
@@ -525,18 +352,6 @@
               "ViewState": "AgIAAFgBAAAAAAAAAADwv2YBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
               "WhenOpened": "2025-03-08T18:03:54.382Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Git\\Game-Mod-Q4\\game\\Player.h",
-              "RelativeDocumentMoniker": "game\\Player.h",
-              "ToolTip": "C:\\Git\\Game-Mod-Q4\\game\\Player.h",
-              "RelativeToolTip": "game\\Player.h",
-              "ViewState": "AgIAAD8BAAAAAAAAAAAqwCYBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-08T13:45:40.198Z"
             }
           ]
         }

@@ -233,7 +233,13 @@ stateResult_t rvWeaponMachinegun::State_Fire ( const stateParms_t& parms ) {
 			} else {
 				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 				//for(int i = 10; i >=0; i--){
-					Attack(false, 3, spread, 0, 1.0f);
+				float xpcost = 2000;
+				if (pm_xp.GetFloat() > xpcost) {
+					Attack(false, 1, spread, 0, 1.0f);
+				}
+				else {
+					gameLocal.Printf("You can't cast Melf's Hosedown yet. You need %f xp to cast this spell\n", xpcost);
+				}
 				//}
 				
 				//Attack ( false, 10, spread, 0, 1.0f );

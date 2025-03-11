@@ -147,6 +147,11 @@ public:
 	idVec4					mLastLongThinkColor;
 // RAVEN END
 
+	//EALM 
+	bool					isPoisoned;
+	float					poisonTime;
+	int						tickCount;
+
 	struct entityFlags_s {
 		bool				notarget			:1;	// if true never attack or target this entity
 		bool				noknockback			:1;	// if true no knockback from hits

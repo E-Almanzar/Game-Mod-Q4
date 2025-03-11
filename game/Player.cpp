@@ -7825,6 +7825,13 @@ void idPlayer::UpdateViewAngles( void ) {
 
 	// save in the log for analyzing weapon angle offsets
 	loggedViewAngles[ gameLocal.framenum & (NUM_LOGGED_VIEW_ANGLES-1) ] = viewAngles;
+
+	//EALM why here?
+	if (gameLocal.time - HeroismTimer > SEC2MS(5)) {
+		this->godmode = false;
+	}
+	
+	
 }
 
 /*
