@@ -27,8 +27,8 @@ protected:
 
 	void					SpinUp				( void );
 	void					SpinDown			( void );
-	float xpcost = 1000;
-
+	float					xpcost = 1000;
+	bool					isStart = false;
 private:
 
 	stateResult_t		State_Idle		( const stateParms_t& parms );
@@ -47,6 +47,7 @@ rvWeaponHyperblaster::rvWeaponHyperblaster
 ================
 */
 rvWeaponHyperblaster::rvWeaponHyperblaster ( void ) {
+
 }
 
 /*
@@ -57,7 +58,10 @@ rvWeaponHyperblaster::Spawn
 void rvWeaponHyperblaster::Spawn ( void ) {
 	jointBatteryView = viewAnimator->GetJointHandle ( spawnArgs.GetString ( "joint_view_battery" ) );
 	spinning		 = false;
-	
+	if (isStart) {
+		//owner->inventory.ammo[6] += 2;
+	}
+	isStart = true;
 	SetState ( "Raise", 0 );	
 }
 
@@ -69,6 +73,7 @@ rvWeaponHyperblaster::Save
 void rvWeaponHyperblaster::Save ( idSaveGame *savefile ) const {
 	savefile->WriteJoint ( jointBatteryView );
 	savefile->WriteBool ( spinning );
+	savefile->WriteBool(isStart);
 }
 
 /*
@@ -79,6 +84,7 @@ rvWeaponHyperblaster::Restore
 void rvWeaponHyperblaster::Restore ( idRestoreGame *savefile ) {
 	savefile->ReadJoint ( jointBatteryView );
 	savefile->ReadBool ( spinning );
+	savefile->ReadBool(isStart);
 }
 
 /*
@@ -232,15 +238,16 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 			SpinUp ( );
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 
-
+			
 			if (pm_xp.GetFloat() > xpcost) {
-			Attack ( false, 30, spread, 0, 1.0f );
-				if ( ClipSize() ) {
-					viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, (float)AmmoInClip()/ClipSize() );
-				} else {
-					viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, 1.0f );		
-				}
+				Attack ( false, 30, spread, 0, 1.0f );
+				//if ( ClipSize() ) {
+				//	viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, (float)AmmoInClip()/ClipSize() );
+				//} else {
+				//	viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, 1.0f );		
+				//}
 				PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );
+				gameLocal.Printf("You CAN cast Chromatic Orb yet. Need %f have %f\n", xpcost, pm_xp.GetFloat());
 			}
 			else {
 				gameLocal.Printf("You can't cast Chromatic Orb yet. You need %f xp to cast this spell\n", xpcost);

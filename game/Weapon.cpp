@@ -2518,7 +2518,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 	// avoid all ammo considerations on an MP client
 	if ( !gameLocal.isClient ) {
 		float xp = pm_xp.GetFloat();
-		pm_xp.SetFloat(pm_xp.GetFloat() + 100);
+		pm_xp.SetFloat(pm_xp.GetFloat() + 50);
 		
 		// check if we're out of ammo or the clip is empty
 		int ammoAvail = owner->inventory.HasAmmo( ammoType, ammoRequired );
@@ -2526,7 +2526,29 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 			return;
 		}
 
-		owner->inventory.UseAmmo( ammoType, ammoRequired );
+		//EALM
+		if (spawnArgs.GetBool("IsAMachineGun")) {
+			//gameLocal.Printf("isamgun\n");
+			if (spawnArgs.GetFloat("mgunCount") < 15) {
+				spawnArgs.SetFloat("mgunCount", spawnArgs.GetFloat("mgunCount") + 1);
+				//gameLocal.Printf("adding 1\n");		
+				ammoClip += 1;
+
+			}
+			else {
+				spawnArgs.SetFloat("mgunCount", 0);
+				owner->inventory.UseAmmo(ammoType, 1);
+				pm_xp.SetFloat(pm_xp.GetFloat() + 50);
+				//gameLocal.Printf("taking 1?\n");
+				//ammoClip -= 1;
+
+			}
+		}
+		else {
+			//gameLocal.Printf("not a mgun\n");
+			owner->inventory.UseAmmo(ammoType, ammoRequired);
+			pm_xp.SetFloat(pm_xp.GetFloat() + 50);
+		}
 		if ( clipSize && ammoRequired ) {
  			clipPredictTime = gameLocal.time;	// mp client: we predict this. mark time so we're not confused by snapshots
 			ammoClip -= 1;

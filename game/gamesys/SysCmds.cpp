@@ -3041,17 +3041,23 @@ void Cmd_spawnThatGrunt_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-	float xpcost = 2000;
-	if (pm_xp.GetFloat() > xpcost) {
-		gameLocal.SpawnEntityDef(dict, &newEnt);
+
+	//Grunt: xp 2000 ammo dmg, 10
+	int lvl2slots = player->inventory.HasAmmo(10, 1);
+	if (lvl2slots > 0) {
+		player->inventory.UseAmmo(10, 1);
+		float xpcost = 2000;
+		if (pm_xp.GetFloat() > xpcost) {
+			gameLocal.SpawnEntityDef(dict, &newEnt);
+		}
+		else {
+			if(newEnt)
+			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+		}
 	}
 	else {
-		if(newEnt)
-		gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+		gameLocal.Printf("You don't have enough spell slots to summon Grunt\n");
 	}
-	//if (newEnt) {
-	//	gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
-	//}
 }
 void Cmd_spawnThatGladiator_f(const idCmdArgs& args) {
 	const char* key, * value;
@@ -3078,18 +3084,25 @@ void Cmd_spawnThatGladiator_f(const idCmdArgs& args) {
 
 		dict.Set(key, value);
 	}
-	//gameLocal.SpawnEntityDef(dict, &newEnt);
-	
-	float xpcost = 4000;
-	if (pm_xp.GetFloat() > xpcost) {
-		gameLocal.SpawnEntityDef(dict, &newEnt);
+
+	//Gladiator: lvl 3, xp 4k gndlauncher, 8
+	int lvl3slots = player->inventory.HasAmmo(8, 1);
+	if (lvl3slots > 0) {
+		player->inventory.UseAmmo(8, 1);
+		float xpcost = 4000;
+		if (pm_xp.GetFloat() > xpcost) {
+			gameLocal.SpawnEntityDef(dict, &newEnt);
+		}
+		else {
+			if (newEnt)
+				gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+		}
+		if (newEnt) {
+			gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+		}
 	}
 	else {
-		if (newEnt)
-			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
-	}
-	if (newEnt) {
-		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+		gameLocal.Printf("You don't have enough spell slots to summon Gladiator\n");
 	}
 }
 void Cmd_spawnThatTurret_f(const idCmdArgs& args) {
@@ -3149,17 +3162,24 @@ void Cmd_spawnThatSci_f(const idCmdArgs& args) {
 		dict.Set(key, value);
 	}
 	//gameLocal.SpawnEntityDef(dict, &newEnt);
-	//AMMO HERE
-	float xpcost = 1000;
-	if (pm_xp.GetFloat() > xpcost) {
-		gameLocal.SpawnEntityDef(dict, &newEnt);
+	//Scientist lvl 1 xp 1k ammo hyper, 6
+	int lvl1slots = player->inventory.HasAmmo(6, 1);
+	if (lvl1slots > 0) {
+		player->inventory.UseAmmo(6, 1);
+		float xpcost = 1000;
+		if (pm_xp.GetFloat() > xpcost) {
+			gameLocal.SpawnEntityDef(dict, &newEnt);
+		}
+		else {
+			if (newEnt)
+				gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+		}
+		if (newEnt) {
+			gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+		}
 	}
 	else {
-		if (newEnt)
-			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
-	}
-	if (newEnt) {
-		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+		gameLocal.Printf("You don't have enough spell slots to summon Scientist\n");
 	}
 }
 
@@ -3189,17 +3209,24 @@ void Cmd_spawnThatBBuddy_f(const idCmdArgs& args) {
 		dict.Set(key, value);
 	}
 	//gameLocal.SpawnEntityDef(dict, &newEnt);
-	//AMMO HERE
-	float xpcost = 6000;
-	if (pm_xp.GetFloat() > xpcost) {
-		gameLocal.SpawnEntityDef(dict, &newEnt);
+
+	//Boss Buddy, lvl 4, xp 6k rocket launcher 7
+	int lvl4slots = player->inventory.HasAmmo(7, 1);
+	if (lvl4slots > 0) {
+		player->inventory.UseAmmo(7, 1);	float xpcost = 6000;
+		if (pm_xp.GetFloat() > xpcost) {
+			gameLocal.SpawnEntityDef(dict, &newEnt);
+		}
+		else {
+			if (newEnt)
+				gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
+		}
+		if (newEnt) {
+			gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+		}
 	}
 	else {
-		if (newEnt)
-			gameLocal.Printf("You can't summon %s yet. You need %f xp to cast this spell\n", &newEnt->name, xpcost);
-	}
-	if (newEnt) {
-		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+		gameLocal.Printf("You don't have enough spell slots to summon Boss Buddy\n");
 	}
 }
 
@@ -3231,44 +3258,62 @@ void Cmd_Longstrider_f(const idCmdArgs& args) {
 	//physicsObj.SetSelf(player);
 
 	//AMMO HERE
-	float xpcost = 1000;
-	if (pm_xp.GetFloat() > xpcost) {
-		if (pm_speed.GetFloat() == 160) {
-			pm_speed.SetFloat(750);
+	int lvl1slots= player->inventory.HasAmmo(6, 1);
+	if (lvl1slots > 0) {
+		float xpcost = 1000;
+		if (pm_xp.GetFloat() > xpcost) {
+			if (pm_speed.GetFloat() == 160) {
+				pm_speed.SetFloat(750);
+			}
+			else {
+				pm_speed.SetFloat(160);
+				player->inventory.UseAmmo(6, 1); //Use ammo here cuz toggle
+			}
 		}
 		else {
-			pm_speed.SetFloat(160);
+			gameLocal.Printf("You can't cast Longstrider yet. You need %f xp to cast this spell\n", xpcost);
 		}
 	}
 	else {
-		gameLocal.Printf("You can't cast Longstrider yet. You need %f xp to cast this spell\n", xpcost);
+		gameLocal.Printf("You don't have enough spell slots to cast longstrider\n");
 	}
-
 }
 
 void Cmd_EnlargeReduce_f(const idCmdArgs& args) {
 	idPlayer* player;
 
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
 
 	//AMMO HERE
-	float xpcost = 2000;
-	if (pm_xp.GetFloat() > xpcost) {
-		player = gameLocal.GetLocalPlayer();
-		if (!player) {
-			return;
-		}
-		if (pm_normalheight.GetFloat() == 74 && pm_normalviewheight.GetFloat() == 68) {
-			pm_normalheight.SetFloat(300);
-			pm_normalviewheight.SetFloat(275);
+	int lvl2slots = player->inventory.HasAmmo(10, 1);
+	if (lvl2slots > 0) {
+		idInventory inv = player->inventory;
+		float xpcost = 2000;
+		if (pm_xp.GetFloat() > xpcost) {
+			player = gameLocal.GetLocalPlayer();
+			if (!player) {
+				return;
+			}
+			if (pm_normalheight.GetFloat() == 74 && pm_normalviewheight.GetFloat() == 68) {
+				pm_normalheight.SetFloat(300);
+				pm_normalviewheight.SetFloat(275);
+				player->inventory.UseAmmo(10, 1); //Use ammo here cuz toggle
+			}
+			else {
+				pm_normalheight.SetFloat(74);
+				pm_normalviewheight.SetFloat(68);
+			}
+
 		}
 		else {
-			pm_normalheight.SetFloat(74);
-			pm_normalviewheight.SetFloat(68);
+			gameLocal.Printf("You can't cast Enlarge/Reduce yet. You need %f xp to cast this spell\n", xpcost);
 		}
-
 	}
 	else {
-		gameLocal.Printf("You can't cast Enlarge/Reduce yet. You need %f xp to cast this spell\n", xpcost);
+			gameLocal.Printf("You don't have enough spell slots to cast Enlarge/Reduce\n");
 	}
 	//player->GivePowerUp(POWERUP_INVISIBILITY, SEC2MS(10.0f));
 }
@@ -3282,15 +3327,21 @@ void Cmd_TimeStop_f(const idCmdArgs& args) {
 	}
 
 	//AMMO HERE
-	float xpcost = 7000;
-	if (pm_xp.GetFloat() > xpcost) {
-		Sleep(5000);
+	int lvl4slots = player->inventory.HasAmmo(7, 1);
+	if (lvl4slots > 0) {
+		player->inventory.UseAmmo(7, 1);
+		float xpcost = 6000;
+		if (pm_xp.GetFloat() > xpcost) {
+			Sleep(5000);
 
+		}
+		else {
+			gameLocal.Printf("You can't cast Timestop yet. You need %f xp to cast this spell\n", xpcost);
+		}
 	}
 	else {
-		gameLocal.Printf("You can't cast Timestop yet. You need %f xp to cast this spell\n", xpcost);
+	gameLocal.Printf("You don't have enough spell slots to cast Timestop\n");
 	}
-
 
 }
 
@@ -3302,17 +3353,23 @@ void Cmd_Heroism_f(const idCmdArgs& args) {
 		return;
 	}
 	//AMMO HERE
-	float xpcost = 4000;
-	if (pm_xp.GetFloat() > xpcost) {
-		player->HeroismTimer = gameLocal.time;
-		player->godmode = true;
-		//gameLocal.Printf("You're a HERO!\n");
+	int lvl3slots = player->inventory.HasAmmo(8, 1);
+	if (lvl3slots > 0) {
+		player->inventory.UseAmmo(8, 1);
+		float xpcost = 4000;
+		if (pm_xp.GetFloat() > xpcost) {
+			player->HeroismTimer = gameLocal.time;
+			player->HeroismFlag = true;
+			player->godmode = true;
+			//gameLocal.Printf("You're a HERO!\n");
+		}
+		else {
+			gameLocal.Printf("You can't cast Heroism yet. You need %f xp to cast this spell\n", xpcost);
+		}
 	}
 	else {
-		gameLocal.Printf("You can't cast Heroism yet. You need %f xp to cast this spell\n", xpcost);
+		gameLocal.Printf("You don't have enough spell slots to cast Heroism\n");
 	}
-
-
 }
 
 void Cmd_GetXP_f(const idCmdArgs& args) {
@@ -3333,7 +3390,7 @@ void Cmd_SetXP_f(const idCmdArgs& args) {
 		return;
 	}
 	if (pm_xp.GetFloat() < 10000.0f) {
-		pm_xp.SetFloat(1000.0f);
+		pm_xp.SetFloat(10000);
 	}
 	else {
 		pm_xp.SetFloat(0);

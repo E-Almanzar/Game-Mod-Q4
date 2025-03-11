@@ -1061,7 +1061,6 @@ bool idInventory::UseAmmo( int index, int amount ) {
 	if ( !HasAmmo( index, amount ) ) {
 		return false;
 	}
-
 	// take an ammo away if not infinite
 	if ( ammo[ index ] >= 0 ) {
 		ammo[ index ] -= amount;
@@ -1672,7 +1671,7 @@ void idPlayer::Init( void ) {
 	// initialize the script variables
 	memset ( &pfl, 0, sizeof( pfl ) );
 	pfl.onGround = true;
-	pfl.noFallingDamage = false;
+	pfl.noFallingDamage = true;
 
 	// Start in idle
 	SetAnimState( ANIMCHANNEL_TORSO, "Torso_Idle", 0 );
@@ -3357,6 +3356,12 @@ void idPlayer::UpdateHudAmmo( idUserInterface *_hud ) {
 
 	inclip		= weapon->AmmoInClip();
 	ammoamount	= weapon->AmmoAvailable();
+	
+	//EALM
+	int lvl1 = inventory.HasAmmo(6, 1);
+	int lvl2 = inventory.HasAmmo(10, 1);
+	int lvl3 = inventory.HasAmmo(8, 1);
+	int lvl4 = inventory.HasAmmo(7, 1);
 
 	if ( ammoamount < 0 ) {
 		// show infinite ammo
@@ -3366,6 +3371,13 @@ void idPlayer::UpdateHudAmmo( idUserInterface *_hud ) {
 	} else if ( weapon->ClipSize ( ) && !gameLocal.isMultiplayer ) {
 		_hud->SetStateInt ( "player_clip_size", weapon->ClipSize() );
 		_hud->SetStateFloat ( "player_ammopct", (float)inclip / (float)weapon->ClipSize ( ) );
+	
+		//EALM no clue if this is gonna work gotta hopes
+		_hud->SetStateInt("lvl1", lvl1);
+		_hud->SetStateInt("lvl2", lvl2);
+		_hud->SetStateInt("lvl3", lvl3);
+		_hud->SetStateInt("lvl4", lvl4);
+
 		if ( weapon->ClipSize ( )==1) {
 			_hud->SetStateInt ( "player_totalammo", ammoamount );
 		}
@@ -7826,10 +7838,6 @@ void idPlayer::UpdateViewAngles( void ) {
 	// save in the log for analyzing weapon angle offsets
 	loggedViewAngles[ gameLocal.framenum & (NUM_LOGGED_VIEW_ANGLES-1) ] = viewAngles;
 
-	//EALM why here?
-	if (gameLocal.time - HeroismTimer > SEC2MS(5)) {
-		this->godmode = false;
-	}
 	
 	
 }
@@ -9650,6 +9658,45 @@ void idPlayer::Think( void ) {
 		inBuyZone = false;
 
 	inBuyZonePrev = false;
+
+	//EALM why here?
+	if (gameLocal.time - HeroismTimer > SEC2MS(5) && (HeroismFlag == true)) {
+		this->godmode = false;
+		HeroismFlag = false;
+	}
+
+	float xp = pm_xp.GetFloat();
+	if (inventory.weapons < 4 && xp > 1000) {
+		GiveStuffToPlayer(this, "weapon_hyperblaster", NULL);
+		this->inventory.ammo[6] += 2;
+		//GiveStuffToPlayer(this, "ammo", NULL);
+
+		//
+	}
+	if (inventory.weapons < 10 && xp > 2000) {
+		GiveStuffToPlayer(this, "weapon_machinegun", NULL);
+		this->inventory.ammo[10] += 10;
+		//this->inventory.ammo[2] = 15;
+		//gameLocal.Printf("inventory.weapons %i\n", inventory.weapons);
+	}
+	if (inventory.weapons < 12 && xp > 4000) {
+		GiveStuffToPlayer(this, "weapon_grenadelauncher", NULL);
+		//this->inventory.ammo[8] = 15;
+		//gameLocal.Printf("inventory.weapons %i\n", inventory.weapons);
+	}
+	if (inventory.weapons < 76 && xp > 5000) {
+		GiveStuffToPlayer(this, "weapon_rocketlauncher", NULL);
+		//this->inventory.ammo[7] = 15;
+		//gameLocal.Printf("inventory.weapons %i\n", inventory.weapons);
+	}
+	//Check if you have the Xp for it and that you dont currently have it?
+	//if (xp > 1000 && dont have it){
+	//		give stuff
+	// }
+	//etc for all the weapons
+
+	//GiveStuffToPlayer(this, itemName, NULL);
+//}
 }
 
 /*

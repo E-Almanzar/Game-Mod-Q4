@@ -25,6 +25,8 @@ protected:
 
 	bool				UpdateFlashlight	( void );
 	void				Flashlight			( bool on );
+	bool					isStart = true;
+
 
 private:
 
@@ -55,7 +57,7 @@ rvWeaponMachinegun::Spawn
 void rvWeaponMachinegun::Spawn ( void ) {
 	spreadZoom = spawnArgs.GetFloat ( "spreadZoom" );
 	fireHeld   = false;
-		
+	
 	SetState ( "Raise", 0 );	
 	
 	Flashlight ( owner->IsFlashlightOn() );
